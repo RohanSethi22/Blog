@@ -1,5 +1,5 @@
 # Web Blog
-## Django based blog website
+## Django based blog web-app
 Its a simple blog, created using the Django framework, that can dynamically add webpages for new blog posts added via the django admin interfacee.
 It contains two apps -
 1. posts - for adding new blog posts containing texxt and image.
