@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Blog_Home</title>
+</head>
+<body>
+	{% extends 'base.html' %}
+	{% load static %}
+	{% block content %}
+	<div style="padding: 10px;" align="center">
+		<h1>Welcome to my Blog !</h1>
+		<img src="{% static 'isolation.jpg' %}" class="img-responsive" style="max-height: 350px">
+	</div>
+	<hr>
+	<h2 style="padding: 10px;">Latest Posts</h2>
+	{% for post in all_posts.all %}
+		<div style="padding: 4px 10px;">
+			<a href="{% url 'viewpost' post.id %}">
+				<h3>{{ post.title }}</h3>
+			</a>
+			<div>
+				<span class="glyphicon glyphicon-time" style="float: left; top: 10px;"></span>
+				<h5 style="float: left;"> &nbsp {{ post.displaydate }}</h5>
+				<div style="position: relative; left: 4px; top: 6px;">
+					&bull; 
+					<a href="http://localhost:8000/posts/{{ post.id }}/#disqus_thread" data-disqus-identifier='post-{{ post.id }}'> Post Comments </a>
+				</div>
+			</div>
+			<img src="{{ post.pic.url }}" class="center-block img-responsive" style="max-height: 220px">
+			<br>
+			<p>{{ post.snippet }}...</p>
+		</div>
+	{% endfor %}
+	{% endblock %}
+</body>
+</html>
