@@ -2,11 +2,42 @@
 <html>
 <head>
 	<title>About the Author</title>
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
 </head>
 <body>
 	{% extends 'base.html' %}
+	{% load static %}
 	{% block content %}
-	This is the about page.
+	<div class="container-fluid">
+		<div class="col-md-7">
+			<h2>This blog has been created by - </h2>
+			<h1><strong>&nbsp&nbsp Rohan Sethi</strong></h1>
+			<h2><i class="glyphicon glyphicon-star" style="position: relative; top: 1px; left: 4px; font-size: 70%"></i> Coder, Developer, Problem Solver</h2>
+			<h3> Computer Science student at Netaji Subhas Institute of Technology</h3>
+			<h3>Hobbies include - </h3>
+			<ul style="font-size: 140%;">
+				<li>Playing Harmonica</li>
+				<li>Sketching</li>
+				<li>Watching movies</li>
+				<li>Reading novels</li>
+			</ul>
+			<h3> View <a href="{% static 'Resume_Rohan.pdf' %}" target="_blank">complete resume</a></h3>
+		</div>
+		<div class="col-md-5">
+			<img src="{% static 'Profile_pic.jpg' %}" align="left" class="img-responsive" style="max-height: 400px;" alt="Profile Pic">
+		</div>
+	</div>
+	<br>
+	<div class="container-fluid bg-dark text-white text-center" style="padding:  0px 10px 10px 10px;">
+		<h3>Contact details -</h3>
+		<i class="glyphicon glyphicon-envelope"></i>&nbsp rohan.sethi22@gmail.com
+		<br>
+		<i class="fa fa-github"></i>         
+		<a href="https://github.com/RohanSethi22/" target="_blank">&nbsp GitHub Profile</a>
+		<br>
+		<i class="fa fa-linkedin"></i>
+		<a href="https://www.linkedin.com/in/rohansethi22/" target="_blank">&nbsp LinkedIn Profile</a>
+	</div>
 	{% endblock %}
 </body>
 </html>
